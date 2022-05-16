@@ -1,0 +1,107 @@
+
+1. If you have used inline, internal, and external all the 3 stylings in HTML for a single element then which style will be applied?
+
+Inline 
+Internal
+External
+None of the above
+
+Answer: Inline
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Comments in HTML is done by:
+
+<?-- -->
+<!-- -->
+<!-- --!>
+</-- -->
+
+Answer: <!-- -->
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. which is the correct HTML syntax for adding a link to the image?
+
+<a src=”http://www.xyz.com/image”><img src=”image path” /></a>
+<a src=”http://www.xyz.com/image”><img href=”image path” /></a>
+<link href=”http://www.xyz.com/image”><img src=”image path” /></link>
+<a href=”http://www.xyz.com/image”><img src=”image path” /></a>
+
+Answer:  <a href=”http://www.xyz.com/image”><img src=”image path” /></a>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Which of the following are not semantic tags?
+
+<div>
+<nav>
+<article>
+<summary>
+
+Answer:  div
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. What are the correct extensions for saving an HTML file?
+
+.hml
+.xml
+.html
+.htm
+
+Answer: (Multiple is correct ) (.html,.htm) 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. HTML attribute values are case-sensitive?
+
+True
+False
+
+Answer: True
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. Using which attribute we can add a tooltip in the HTML element.
+
+tooltip
+title
+ref
+None of the above
+
+Answer: title
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. How to set the playback speed of audio/video?
+
+playbackrate
+defaultPlaybackrate
+currentTime
+Duration
+
+Answer: defaultPlaybackrate
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Which one is not a semantic html5 element?
+
+<article>
+<mark>
+<section>
+<span>
+
+Answer: <span>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Why iframe is used?
+
+To display web page within a web page
+To display animation within a web page
+To display web page without browser
+All of the above
+
+Answer: To display web page within a web page
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. Which of the following attribute specifies if the user can edit the element's content or not?
+
+content
+editable
+contenteditable
+contextmenu
+
+Answer: contenteditable
