@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    *{
+        margin: 0px;
+        padding: 0px;
+        color: blue;
+    }
+
+       /* tag selector */
+        div{
+
+            color: brown;
+        }
+        p{
+            color: blue;
+        }
+
+        /* id selector #element_id */
+
+        #heading{
+            color: pink;
+        }
+
+
+        /* class selector  .element with that class*/
+        .card{
+            background-color: black;
+            color: white;
+        }
+
+        p{
+            color: white;
+        }
+
+        /* select tag h1 having class center */
+        h1.center{
+            text-align: center;
+        }
+
+        h1.right{
+            text-align: right;
+        }
+
+        h1#head{
+            text-align: start;
+            color: rgb(127, 138, 255);
+        }
+
+        .card{
+            border: 6px solid green;
+            display: inline-block;
+            width: 300px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- inline style -->
+    <div id="heading">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad voluptate repellat consectetur aperiam eius dolores et ex delectus. Dolores et quisquam mollitia ea iste quis veniam ullam culpa aliquam reiciendis!
+    </div>
+
+    <div class="card">
+        <div class="img">
+            <img src="" alt="image" />
+        </div>
+        <div class="card-body">
+            <p>
+                lorem ipsum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, quae modi beatae aut ipsum perferendis inventore, sapiente ipsam iste blanditiis voluptatem enim, odio natus tenetur ad saepe optio quam! Sunt?
+            </p>
+        </div>
+    </div>
+    <span>I am span inline</span>
+    <h1 class="center">Heading </h1>
+    <h1 class="right">right</h1>
+    <h1 id="head">Normal h1</h1>
+</body>
+</html>
+<!-- 
+    selector{
+        key: value;
+        key2: value;
+    }
+
+    inline css
+    using style tag
+    using external file
+
+    basic selector (tag, class, id, *(universal selector))
+
+ -->
