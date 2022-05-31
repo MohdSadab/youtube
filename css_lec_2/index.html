@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .descendent > p {
+        color: white;
+        background-color: black;
+      }
+
+      .child .temp {
+        color: yellow;
+        background-color: blue;
+      }
+
+      .child {
+        display: none;
+      }
+
+      div + p {
+        color: red;
+      }
+      div ~ p {
+        color: blue;
+      }
+
+      div {
+        display: inline-block;
+      }
+
+      .box-model {
+        border: 1px solid green;
+        padding: 10px 30px 20px 40px;
+        /* 
+            padding : 10px  (top,bottom,left,right);
+            padding: 10px 20px (10px (top,bottom), 20px (left,right))
+            padding: 10px 20px 10px 20px (top right bottom left)
+
+            margin : 10px  (top,bottom,left,right);
+            margin: 10px 20px (10px (top,bottom), 20px (left,right))
+            margin: 10px 20px 10px 20px (top right bottom left)
+        
+        */
+      }
+
+      * {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      .card {
+        height: 300px;
+        width: 300px;
+        background-color: rgb(158, 199, 236);
+      }
+
+      .card img {
+        width: 300px;
+      }
+
+      .card .card-content {
+        padding: 10px;
+        text-align: justify;
+      }
+
+      .mt-5 {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="descendent">
+      <p>Paragraph 1 in the div.</p>
+      <p>Paragraph 2 in the div.</p>
+      <section>
+        <p>Paragraph 3 in the div.</p>
+      </section>
+    </div> -->
+
+    <div class="child">
+      <p>Paragraph 1 in the div.</p>
+      <p class="temp">Paragraph 2 in the div.</p>
+      <section>
+        <!-- not Child but Descendant -->
+        <p class="temp">Paragraph 3 in the div (inside a section element).</p>
+      </section>
+      <p class="temp">Paragraph 4 in the div.</p>
+    </div>
+
+    <!-- <h2>Adjacent Sibling Selector</h2>
+
+    <p>
+      The + selector is used to select an element that is directly after another
+      specific element.
+    </p>
+    <p>
+      The following example selects the first p element that are placed
+      immediately after div elements:
+    </p>
+
+    <div>
+      <p>Paragraph 1 in the div.</p>
+      <p>Paragraph 2 in the div.</p>
+    </div>
+
+    <p>Paragraph 3. After a div.</p>
+    <p>Paragraph 4. After a div.</p>
+
+    <div>
+      <p>Paragraph 5 in the div.</p>
+      <p>Paragraph 6 in the div.</p>
+    </div>
+
+    <p>Paragraph 7. After a div.</p>
+    <p>Paragraph 8. After a div.</p>
+    <pre>Hello pre tag</pre>
+    <p>
+      The general sibling selector (~) selects all elements that are next
+      siblings of a specified element.
+    </p> -->
+
+    <div class="card">
+      <div class="card-image">
+        <img src="../css_lec_1_practice/hamburger.jpg" alt="burger" />
+      </div>
+      <div class="card-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officia
+        deleniti id reprehenderit consequatur, alias dolores ipsa recusandae
+        nostrum nesciunt fugiat. Cum optio consequuntur nulla obcaecati. Nostrum
+        voluptate illum optio.
+      </div>
+    </div>
+    <div class="card mt-5">
+      <div class="card-image">
+        <img src="../css_lec_1_practice/hamburger.jpg" alt="burger" />
+      </div>
+      <div class="card-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officia
+        deleniti id reprehenderit consequatur, alias dolores ipsa recusandae
+        nostrum nesciunt fugiat. Cum optio consequuntur nulla obcaecati. Nostrum
+        voluptate illum optio.
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+    Selector	                            Example 	Example description
+element element (descendant selector)	     div p	    Selects all <p> elements inside <div> elements
+element>element	(child selector )         div > p	Selects all <p> elements where the parent is a <div> element
+element+element	(adjacent sibling selector)  div + p	Selects the first <p> element that are placed immediately after <div> elements
+element1~element2 (general sibling selector) p ~ ul	    Selects every <ul> element that are preceded by a <p> element
+ -->
+
+<!-- 
+     Box Model
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent (space between border and content)
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent (space between element/border)
+
+Important: When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add padding, borders and margins.
+-->
+
+<!-- 
+    Display Property
+
+    display: none;
+    display: block;
+    display: inline;(Displays an element as an inline element (like <span>). Any height and width properties will have no effect)
+    display: inline-block; (Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values)
+
+    many more will discuss later
+
+ -->
