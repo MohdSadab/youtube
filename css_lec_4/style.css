@@ -1,0 +1,89 @@
+/* h1:hover {
+  color: blue;
+}
+
+span:hover {
+  color: red;
+} */
+/* p:first-child {
+  color: red;
+} */
+
+/* p:first-of-type {
+  color: red;
+} */
+
+/* :not(p) {
+  color: blue;
+}
+body,
+.container {
+  color: black;
+}
+
+input:optional {
+  border: 1px solid red;
+  padding: 10px 20px;
+} */
+
+/* wo paragraph jo second child hai */
+/* p:nth-child(2) {
+  color: red;
+} */
+
+/* 
+any-selector : psuedo class or element{
+}
+*/
+
+/* an+b   a number of cycle b offset */
+p:nth-child(2n + 1) {
+  color: red;
+}
+
+h1::after {
+  margin-left: 5px;
+  content: "I am content";
+}
+
+h1::before {
+  content: "*";
+  font-size: 12px;
+  color: red;
+  position: relative;
+  top: -16px;
+}
+
+/* select that input which have input type text */
+/* input[type="text"] {
+  border: 1px solid blue;
+} */
+
+input[type] {
+  border: 1px solid blue;
+}
+
+/* select all div containing col in class */
+/* div[class*="col"] {
+  border: 1px solid green;
+  height: 10px;
+  margin: 10px;
+} */
+/* 
+div[class~="col"] {
+  border: 1px solid green;
+  height: 10px;
+  margin: 10px;
+} */
+
+/* div[class^="col"] {
+  border: 1px solid green;
+  height: 50px;
+  margin: 10px;
+} */
+
+div[class$="col"] {
+  border: 1px solid green;
+  height: 50px;
+  margin: 10px;
+}
