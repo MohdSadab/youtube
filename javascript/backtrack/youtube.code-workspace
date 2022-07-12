@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\functionup"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "youtube",
+		"editor.formatOnSave": true
+	}
+}
