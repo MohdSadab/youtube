@@ -541,9 +541,31 @@ let arr2= JSON.parse(JSON.stringify(arr));
     "author": 9
   }
 
-  for(let key in obj){
-    console.log(key,obj.key,obj[key]);
-  }
+  // for(let key in obj){
+  //   console.log(key,obj.key,obj[key]);
+  // }
 
-  arr2=arr.filter((val,index)=>val%2===0)
-  arr2.push(6)
+  // arr2=arr.filter((val,index)=>val%2===0)
+  // arr2.push(6)
+
+  // function myClass(row,col){
+  //   let arr=[];
+  //   let count=1;
+  //   for(let i=0;i<row;i++){
+  //      arr.push([]);
+  //      for(let j=0;j<col;j++){
+  //         arr[i].push(count++);
+  //      }
+  //   }
+
+  //   return arr;
+  // }
+
+  // myClass(5,3)
+
+  arr=[1,2,4,[5,6]];
+  arr2=[].concat(arr);
+
+  arr2[3][0]=1;
+  console.log(arr,arr2)
+
