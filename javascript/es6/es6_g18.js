@@ -563,9 +563,24 @@ let arr2= JSON.parse(JSON.stringify(arr));
 
   // myClass(5,3)
 
-  arr=[1,2,4,[5,6]];
-  arr2=[].concat(arr);
+  // arr=[1,2,4,[5,6]];
+  // arr2=[].concat(arr);
 
-  arr2[3][0]=1;
-  console.log(arr,arr2)
+  // arr2[3][0]=1;
+  // console.log(arr,arr2)
 
+// var s="apple";
+// s= [...s];
+// s[0]="b"
+// // console.log(s);
+// s=s.join("");
+// console.log(s);
+
+var s="apple djhdkj dhdkhkhd dkjhjkd";
+// s= s.split(" ");
+// s[0]="b"
+// // console.log(s);
+// s=s.join("");
+// console.log(s);
+
+console.log(s.includes('dkjss'))
