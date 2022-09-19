@@ -583,4 +583,72 @@ var s="apple djhdkj dhdkhkhd dkjhjkd";
 // s=s.join("");
 // console.log(s);
 
-console.log(s.includes('dkjss'))
+// console.log(s.includes('dkjss'))
+
+function temp(){
+   console.log(this,window)
+}
+
+// function invoking this pointing to global window
+// temp();
+
+// let obj1={
+//     name:"Sadab",
+//     printName:function(){
+//       console.log(this.name,this);
+//     }
+// }
+
+
+// calling method this point to current object
+//  obj1.printName();
+// var name="DHHDhd"
+// const temp2 =  obj1.printName;
+
+// temp2();
+// function Person(name,age){
+//   this.name=name;
+//   this.age = age;
+// }
+
+// const p1 = new Person("Abc",20)
+
+// let obj1={
+//    name:"sadab"
+// }
+
+let obj2={
+  name:"sadab-skjkjskj"
+}
+
+// function printName(address,desig){
+//   console.log(this.name,address,desig)
+// }
+
+// printName.call(obj1,"dhjdkjd","dhkkdj")
+// printName.call(obj2,"dhjdkjd-dhhd","dhkkdj-sjsjjhs")
+
+// // const myFunc = printName.bind(obj1);
+// // myFunc('SFFSF','DHHDH')
+
+// let obj1={
+//     name:"Sadab",
+//     printName:()=>{
+//       console.log(this.name,this);
+//     }
+// }
+
+
+function printName(age,state){
+  // console.log(this.name,age,state);
+
+  setTimeout(function(){
+      console.log(this,">>>")
+  })
+
+  setTimeout(()=>{
+      console.log(this,">>>")
+  })
+}
+
+printName.call(obj2,"sggd","djjdj")

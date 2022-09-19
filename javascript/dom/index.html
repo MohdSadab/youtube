@@ -5,10 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./dom.js"></script>
     <style>
         .dynamic{
-            border: 10px solid red;
+           padding: 10px;
+           border: 1px solid red;
+           margin: 5px 0px;
+        }
+
+        .parent{
+            border: 1px solid red;
+            width: 600px;
+            height: 600px;
+        }
+
+        .child{
+            border: 1px solid green;
+            width: 400px;
+            height: 400px;
+        }
+
+        .child-of-child{
+            border: 1px solid green;
+            width: 200px;
+            height: 200px;
         }
     </style>
     
@@ -16,13 +35,25 @@
 <body>
 
     <h1>todo</h1>
-    <!-- <input type="text" id="input"  onchange="onChange(event)"/> -->
-    <!-- <input type="text" id="input"  onkeyup="onKeyChange(event)"/> -->
-    <input type="text" id="input" onkeyup="onKeyChange(event)" />
-    <button>Add</button>
-    <div class="dom"></div>
-    <span class="dom"></div>
-    <h4 class="dom"></div>
+    <!-- <input type="text" id="input"  onchange="onChange(event)"/>
+    <input type="text" id="input"  onkeyup="onKeyChange(event)"/> -->
+    <input type="text" id="input"  />
+    <button onclick="add()">Add</button>
+    <div id="dom"></div>
+<!-- 
+    <div class="parent box" onclick="console.log(event.currentTarget,event.target)">
+        parent
+        <div class="child box" onclick="prevent(event)">
+                child
+            <div class="child-of-child box" onclick="console.log(event.currentTarget,event.target)">
+                child-of-child
+            </div>
+
+        </div>
+
+    </div> -->
+
+    <script src="./dom.js"></script>
     
 </body>
 
