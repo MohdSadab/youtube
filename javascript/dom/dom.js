@@ -64,3 +64,51 @@ loadTodos();
 function prevent(e){
     e.stopPropagation();
 } 
+
+// function loadData(){
+//     console.log("data is loaded")
+//     const xhr = new XMLHttpRequest();
+
+//     xhr.open("GET","https://jsonplaceholder.typicode.com/posts/1")
+
+//     xhr.onloadstart = function(){
+//         console.log("start >>>>>>")
+//         const elem = document.querySelector("#result");
+//         elem.innerHTML = `<div class="spinner-border" role="status">
+//         <span class="visually-hidden">Loading...</span>
+//       </div>`
+//     }
+
+//     xhr.onload = function(){
+//         const elem = document.querySelector("#result");
+//         elem.innerHTML = this.response
+
+//         const xhr = new XMLHttpRequest();
+
+//         xhr.open("GET","https://jsonplaceholder.typicode.com/posts/1")
+
+//         xhr.onloadstart = function(){
+//             console.log("start >>>>>>")
+//             const elem = document.querySelector("#result");
+//             const loader = document.createElement('div')
+//             loader.setAttribute('id','loader');
+//             loader.innerText = 'Loading...'
+//             elem.appendChild(loader)
+
+//         }
+
+//         xhr.onload = function(){
+//             console.log("comments",">>>>",this.response)
+//         }
+
+//         xhr.send();
+//     }
+
+//     xhr.send();
+// }
+
+function loadData(){
+   fetch('https://jsonplaceholder.typicode.com/todo/1')
+  .then(response => response.json())
+  .then(json => console.log(json)).catch(error=>console.log(error))
+}

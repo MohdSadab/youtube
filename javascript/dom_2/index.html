@@ -5,12 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./dom.js"></script>
     <style>
         .dynamic{
             border: 1px solid red;
             padding: 10px;
             margin: 5px 0px;
+        }
+        .parent{
+            border: 1px solid red;
+            width: 600px;
+            height: 600px;
+
+        }
+
+        .child{
+            border: 1px solid blue;
+            width: 400px;
+            height: 400px;
+            
+        }
+
+        .child-of-child{
+            border: 1px solid green;
+            width: 200px;
+            height: 200px;
+            
         }
     </style>
 </head>
@@ -18,11 +37,21 @@
 
     <h1>Todo</h1>
 
-    <input type="text"  id="input" />
-    <button onclick="add(event)">Add</button>
+    <!-- <input type="text"  id="input" />
+    <button onclick="add(event)">Add</button> -->
 
-    <div id="dom"></div>
+    <!-- <div id="dom"></div> -->
 
-    
+    <div class="parent" onclick="eventHandler(event)">
+        parent
+        <div class="child" onclick="eventHandler(event);">
+            child
+            <div class="child-of-child" onclick="eventHandler(event)">
+                child-of-child
+            </div>
+        </div>
+    </div>
+
+    <script src="./dom.js"></script>
 </body>
 </html>
