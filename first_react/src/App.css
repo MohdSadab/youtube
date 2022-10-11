@@ -1,0 +1,26 @@
+.card{
+   border: 1px solid #e5e5e5;
+   border-radius: 5px;
+   width: 200px;
+   height: 300px;
+   box-shadow: #e5e5e5 ;
+}
+
+.title{
+  padding: 5px 10px;
+  background-color: grey;
+}
+
+.card-img{
+  width: inherit;
+  height: auto;
+}
+
+img{
+  width: inherit;
+  height: 250px;
+}
+
+.App{
+  /* display: flex; */
+}

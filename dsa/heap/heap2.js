@@ -100,7 +100,7 @@ class Heap{
     }
 }
 
-const heap = new Heap((a,b)=>a.age>b.age);
+const heap = new Heap((a,b)=>a.age<b.age);
 
  const arr =[{'name':'sadab','age':20},{'name':'sadabs','age':22},{'name':'sadb','age':25},{'name':'saab','age':26}]
 // const arr=[1,2,3,4,5]
