@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import MyApp, { App } from './App';
+import  { App } from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { Home } from './Home';
+import Todos from './Todos';
+import Todo from './Todo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <MyApp /> */}
-    <App />
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App />} >
+              <Route path="home" element={<Home />} />
+              <Route path="todos/" element={<Todos />} >
+                <Route path=":todo_id" element={<Todo />} />
+              </Route>
+            </Route>
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

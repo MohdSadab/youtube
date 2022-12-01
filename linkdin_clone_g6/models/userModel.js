@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import bcrypt from 'bcrypt';
 
 const experience = mongoose.Schema({
     organizationName:{
@@ -81,7 +81,7 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true,
         minLength: 6,
-        maxLength: 30
+        maxLength: 500
     },
     createdAt:{
         type:Date,
@@ -98,5 +98,20 @@ const userSchema = mongoose.Schema({
     education:[education],
     skills:[String]
 })
+
+
+userSchema.pre('save',async function (next){
+    if(this.isNew || this.isModified("password")){
+        const hash = await bcrypt.hash(this.password, 10);
+        this.password = hash;  
+    }
+    next();
+})
+
+userSchema.post('save',async function (){
+   this.password = undefined
+   console.log("user is created, sent welcome email",this);
+})
+
 
 export default mongoose.model('User',userSchema);

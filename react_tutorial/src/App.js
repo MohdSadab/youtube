@@ -1,16 +1,34 @@
 import './App.css';
-import Card from './Card';
+import {Link,Outlet} from 'react-router-dom';
 
 function App() {
+
+  // let [count,setCount] = useState(0)
+  
+
+  // function clickHandler(){
+  //   setCount(count+1);
+  // }
+
+  //componentDidMount
+  // useEffect(()=>{
+  //     console.log(count,"mount")
+  // },[])
+
+  // useEffect(()=>{
+  //   console.log(count,"mount")
+  // },[count])
+
   return (
     <div className="App">
-       <Card title="T1"/>
-       <Card title="T2"/>
-       <Card title="T3"/>
-       <Card title="T4"/>
-       <Card title="T5"/>
-       <Card title="T6"/>
-       <Card title="T7"/>
+       <nav  style={{
+          padding:'1rem',
+          borderBottom:'1px solid'
+       }}>
+          <Link to='/home'>Home</Link> {" | "}
+          <Link to='/todos'>Todos</Link>
+       </nav>
+       <Outlet />
     </div>
   );
 }
