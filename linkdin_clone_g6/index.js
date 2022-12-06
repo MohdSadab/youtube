@@ -3,7 +3,8 @@ import { connect } from './db/db.js';
 import UserModel from './models/userModel.js';
 import { loginSchema } from './validationSchema/user.js';
 import bcrypt from 'bcrypt';
-
+import jwt from 'jsonwebtoken';
+import { isAuthenticated } from './middelware/isAuthenticated.js';
 const app = express();
 
 connect();
@@ -31,11 +32,14 @@ app.post('/user',async (req,res)=>{
 })
 
 
-app.put("/user/:email",async (req,res)=>{
+app.put("/user/",isAuthenticated,async (req,res)=>{
     const userData = req.body;
 
     try {
-        const user = await UserModel.findOne({email:req.params.email});
+        const user = await UserModel.findOne({email:req.user.email});
+        if(!user){
+            throw new Error("User Not Found")
+        }
         user.name = userData.name || user.name;
         user.profileUrl = userData.profileUrl || user.profileUrl;
         user.experiences = userData.experiences || user.experiences;
@@ -61,7 +65,8 @@ app.post("/login",async(req,res)=>{
         }
         let match = await bcrypt.compare(value.password, user.password);
         if(match){
-            return res.status(200).json(user)
+            const token =await jwt.sign({id:user._id,email:user.email},"MyJwtSecret")
+            return res.json({token});
         }
         return res.status(404).json({message:"Password Does not match"});
     } catch (error) {

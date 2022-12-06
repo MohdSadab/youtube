@@ -3,6 +3,8 @@ import { connect } from './db/db.js';
 import UserModel from './models/userModel.js';
 import { userSchema } from './schema/userSchema.js';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import isAuthenticated from './middelware/isAuthenticated.js';
 
 const app = express();
 const port = 8000;
@@ -31,9 +33,10 @@ app.post("/user",async (req,res)=>{
     }
 })
 
-app.put("/user/:email",async (req,res)=>{
+app.put("/user/",isAuthenticated,async (req,res)=>{
     try {
-        const user = await UserModel.findOne({email:req.params.email});
+        console.log(req.user)
+        const user = await UserModel.findOne({email:req.user.email});
         if(!user){
             return res.status(404).json({message:"user not found"});
         }
@@ -57,7 +60,8 @@ app.post("/login",async (req,res)=>{
         }
         const isMatch =await bcrypt.compare(value.password,user.password);
         if(isMatch){
-            return res.json(value);
+            const token = jwt.sign({id:user._id,email:user.email},'JwtSeceretKey',{expiresIn:60*10 })
+            return res.json({token});
         }
         return res.json({message:"Invalid credentials"});
     } catch (error) {
