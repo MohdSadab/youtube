@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import bcrypt from 'bcrypt';
 
 const experience = mongoose.Schema({
     organizationName:{
@@ -90,7 +90,7 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true,
         minLength:6,
-        maxLength:40
+        maxLength:200
     },
     metaInfo:{
         type:String,
@@ -110,6 +110,24 @@ const userSchema = mongoose.Schema({
     },
     profileUrl:String
 })
+
+
+
+// do not use arrow function ?
+// because arrow function this refer to it's context not who is calling
+userSchema.pre('save',async function(next){
+  // this (user object) (refer who is calling save method) 
+//    console.log(this,">>>>>>>>>>>> ",this.isNew,this.isModified('password'))
+    if(this.isNew || this.isModified('password')){
+       this.password=await bcrypt.hash(this.password, 10);
+    }
+    next();
+})
+
+userSchema.post('save',async function(next){
+    this.password = undefined; 
+})
+
 
 const UserModel = mongoose.model('User',userSchema);
 
